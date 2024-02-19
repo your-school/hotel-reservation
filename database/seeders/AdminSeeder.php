@@ -28,6 +28,13 @@ class AdminSeeder extends Seeder
             ],
             [
                 'name' => 'test',
+                'email' => 'test@test.com',
+                'password' => Hash::make('password123'),
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'test1',
                 'email' => 'test1@test.com',
                 'password' => Hash::make('password123'),
                 'created_at' => now(),

@@ -11,6 +11,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])</head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
 
 
 
@@ -22,18 +23,22 @@
             <h1 class="text-3xl font-bold">Custmer - Hotel Reservation</h1>
             <nav>
                 <ul class="flex space-x-4">
-                    @if (Route::has('user.login'))
-                    @auth('users')
-                    <li><a href="{{ url('/') }}" class="hover:text-gray-300">ホーム</a></li>
+                    {{-- @if (Route::has('user.login'))
+                    @auth('users') --}}
+                    {{-- <li><a href="{{ url('/') }}" class="hover:text-gray-300">ホーム</a></li> --}}
+                    <li><a href="{{ route('user.hotel-plans.index') }}" class="hover:text-gray-300">ホーム</a></li>
 
-                        <li><a href="{{ route('user.contact') }}" class="hover:text-gray-300">お問い合わせ</a></li>
-                    @else
+                    <li><a href="{{ route('user.contact') }}" class="hover:text-gray-300">お問い合わせ</a></li>
+                    {{-- @else
+                    <li><a href="{{ route('user.hotel-plans.index') }}" class="hover:text-gray-300">宿泊プラン</a></li>
+                    <li><a href="{{ route('user.contact') }}" class="hover:text-gray-300">お問い合わせ</a></li>
+
                         <li><a href="{{ route('user.login') }}" class="hover:text-gray-300">ログイン</a></li>
                         @if (Route::has('user.register'))
                         <li><a href="{{ route('user.register') }}" class="hover:text-gray-300">新規登録</a></li>
                         @endif
                     @endauth
-                    @endif
+                    @endif --}}
                 </ul>
             </nav>
         </div>

@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('price');
+            $table->string('meal')->nullable(); //0:素泊まり 1:朝食のみ 2:夕食のみ 3:朝・夜2食付き
             $table->foreignId('room_type_id')->references('id')->on('room_types')->onDelete('cascade');
+            $table->foreignId('hotel_id')->references('id')->on('hotels')->onDelete('cascade');
             $table->timestamps();
         });
     }

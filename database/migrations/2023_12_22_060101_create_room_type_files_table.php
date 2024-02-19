@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('room_type_files', function (Blueprint $table) {
             $table->id();
             $table->foreignId('room_type_id')->references('id')->on('room_types')->onDelete('cascade');
+            $table->foreignId('hotel_plan_id')->references('id')->on('hotel_plans')->onDelete('cascade');
             $table->string('file_path');
             $table->timestamps();
         });
