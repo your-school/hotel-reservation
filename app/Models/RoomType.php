@@ -21,6 +21,11 @@ class RoomType extends Model
     }
     public function roomTypeFiles()
     {
-        return $this->hasMany(RoomTypeFile::class);
+        return $this->hasMany(RoomTypeFile::class, 'room_type_id');
+    }
+
+    public function hotel()
+    {
+        return $this->belongsTo(Hotel::class);
     }
 }

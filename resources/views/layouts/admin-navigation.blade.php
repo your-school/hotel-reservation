@@ -12,8 +12,23 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('admin.hotels.index')" :active="request()->routeIs('admin.hotels.index')">
+                        {{ __('宿泊施設') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin.reservation_frames.index')" :active="request()->routeIs('admin.reservation_frames.index')">
+                        {{ __('宿泊プラン一覧') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin.reservers.index')" :active="request()->routeIs('admin.reservers.index')">
+                        {{ __('予約者一覧') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('admin.contacts.index')" :active="request()->routeIs('admin.contacts.index')">
+                        {{ __('お問い合わせ一覧') }}
                     </x-nav-link>
                 </div>
             </div>
